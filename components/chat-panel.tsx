@@ -38,14 +38,14 @@ export function ChatPanel({
 
   const exampleMessages = [
     {
-      heading: 'List flights flying from',
-      subheading: 'San Francisco to Rome today',
-      message: `List flights flying from San Francisco to Rome today`
+      heading: 'How do I network',
+      subheading: 'with no background in the US?',
+      message: `How do I network with no background in the US?`
     },
     {
-      heading: 'What is the status',
-      subheading: 'of flight BA142?',
-      message: 'What is the status of flight BA142?'
+      heading: 'How can I find a cofounder',
+      subheading: 'with a technical background?',
+      message: 'How can I find a cofounder with a technical background?'
     }
   ]
 
