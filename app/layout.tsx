@@ -11,11 +11,10 @@ import { Toaster } from '@/components/ui/sonner'
 export const metadata = {
   metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
   title: {
-    default: 'Next.js Gemini Chatbot',
-    template: `%s - Next.js Gemini Chatbot`
+    default: 'Sun-gu',
+    template: `%s`
   },
-  description:
-    'Build your own generative UI chatbot using the Vercel AI SDK and Google Gemini',
+  description: 'Celebrating Korean Immiagrant Startup Founders',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
