@@ -162,7 +162,7 @@ async function submitUserMessage(content: string) {
   ;(async () => {
     try {
       const result = await experimental_streamText({
-        model: google.generativeAI('models/gemini-1.0-pro-001'),
+        model: google('models/gemini-1.0-pro-001'),
         temperature: 0,
         tools: {
           listDestinations: {
