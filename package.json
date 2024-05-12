@@ -46,6 +46,7 @@
     "react-dom": "^18.3.1",
     "react-intersection-observer": "^9.10.2",
     "react-jsbarcode": "^0.4.2",
+    "react-lite-youtube-embed": "^2.4.0",
     "react-markdown": "^9.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "react-textarea-autosize": "^8.5.3",

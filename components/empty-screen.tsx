@@ -8,7 +8,7 @@ export function EmptyScreen() {
           Sun-gu: Celebrating Korean Immigrant Startup Founders
         </h1>
         <p className="leading-normal text-zinc-900">
-          <i>Sun-gu</i> [Korean: <i>to pioneer</i>] is a web-based interactive
+          <i>Sun-gu</i> [Korean: <i>to pioneer</i>] is an interactive
           documentary telling the stories of Korean first-generation immigrant
           founders located in Silicon Valley.
         </p>
