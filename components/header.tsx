@@ -53,7 +53,7 @@ export function Header() {
         <span>Sun-gu</span>
       </div>
       <div className="flex items-center justify-end gap-2">
-        <Button asChild size="sm">
+        <Button asChild size="sm" variant="outline">
           <a
             target="_blank"
             href="https://github.com/ntcho/sun-gu"
