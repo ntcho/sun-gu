@@ -44,8 +44,8 @@ export function ChatPanel({
     },
     {
       heading: 'How can I find a cofounder',
-      subheading: 'with a technical background?',
-      message: 'How can I find a cofounder with a technical background?'
+      subheading: 'that understands my culture?',
+      message: 'How can I find a cofounder that understands my culture?'
     }
   ]
 
