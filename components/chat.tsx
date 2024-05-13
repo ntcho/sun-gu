@@ -3,8 +3,6 @@
 import { ChatList } from '@/components/chat-list'
 import { ChatPanel } from '@/components/chat-panel'
 import { EmptyScreen } from '@/components/empty-screen'
-import { ListFlights } from '@/components/flights/list-flights'
-import { ListHotels } from '@/components/hotels/list-hotels'
 import { Message } from '@/lib/chat/actions'
 import { useLocalStorage } from '@/lib/hooks/use-local-storage'
 import { useScrollAnchor } from '@/lib/hooks/use-scroll-anchor'
@@ -14,6 +12,7 @@ import { useAIState, useUIState } from 'ai/rsc'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
+// import { Contents } from './tools/contents'
 
 export interface ChatProps extends React.ComponentProps<'div'> {
   initialMessages?: Message[]
@@ -69,6 +68,7 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
           <ChatList messages={messages} isShared={false} session={session} />
         ) : (
           <EmptyScreen />
+          // <Contents tags={['culture', 'growth']} />
         )}
         <div className="h-px w-full" ref={visibilityRef} />
       </div>
