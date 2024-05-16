@@ -45,12 +45,15 @@ async function UserOrLogin() {
 export function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4 shrink-0 bg-gradient-to-b from-background/10 via-background/50 to-background/80 backdrop-blur-xl">
-      <div className="flex items-center px-2 gap-2">
+      <div className="flex items-center px-2 gap-2 group font-semibold">
         {/* <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
           <UserOrLogin />
         </React.Suspense> */}
-        <RocketIcon />
+        <span className="text-lg">🇰🇷 🚀</span>
         <span>Sun-gu</span>
+        <span className="opacity-0 group-hover:opacity-100 transition-opacity">
+          선구
+        </span>
       </div>
       <div className="flex items-center justify-end gap-2">
         <Button asChild size="sm" variant="outline">
