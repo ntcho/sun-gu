@@ -1,5 +1,3 @@
-import { ExternalLink } from '@/components/external-link'
-
 export function EmptyScreen() {
   return (
     <div className="mx-auto max-w-2xl px-4">
@@ -9,8 +7,13 @@ export function EmptyScreen() {
         </h1>
         <p className="leading-normal text-zinc-900">
           <i>Sun-gu</i> [Korean: <i>to pioneer</i>] is an interactive
-          documentary telling the stories of Korean first-generation immigrant
-          founders located in Silicon Valley.
+          documentary telling the stories of first-generation Korean immigrant
+          founders in Silicon Valley.
+        </p>
+        <p className="leading-normal text-zinc-900">
+          Start exploring by asking questions that you would ask an immigrant
+          startup founder — such as being a Korean in silicon valley, challenges
+          as an immigrant founder, or their success stories.
         </p>
       </div>
     </div>
