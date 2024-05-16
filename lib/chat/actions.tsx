@@ -12,11 +12,11 @@ import {
   getMutableAIState
 } from 'ai/rsc'
 
-import { BotCard, BotMessage } from '@/components/stocks'
+import { BotCard, BotMessage } from '@/components/message'
 
 import { saveChat } from '@/app/actions'
 import { auth } from '@/auth'
-import { SpinnerMessage, UserMessage } from '@/components/stocks/message'
+import { SpinnerMessage, UserMessage } from '@/components/message'
 import { RelatedContents } from '@/components/tools/related-contents'
 import { nanoid } from '@/lib/utils'
 import { google } from '@ai-sdk/google'

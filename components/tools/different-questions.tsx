@@ -5,7 +5,7 @@
 import { useActions, useUIState } from 'ai/rsc'
 import { memo, useState } from 'react'
 import { nanoid } from 'nanoid'
-import { UserMessage } from '@/components/stocks/message'
+import { UserMessage } from '@/components/message'
 import { AI } from '@/lib/chat/actions'
 import { toast } from 'sonner'
 
