@@ -14,15 +14,35 @@ import { Chapter, chapters, videos } from 'data/data'
 import { memo } from 'react'
 import LiteYouTubeEmbed from 'react-lite-youtube-embed'
 import { Badge } from '../ui/badge'
+import { DifferentQuestions } from './different-questions'
 
-export const Contents = memo(
-  function Contents({ tags }: { tags: string[] }) {
-    // const { submitUserMessage } = useActions()
-    // const [_, setMessages] = useUIState()
+const validTags = [
+  'fundraising',
+  'networking',
+  'team',
+  'growth',
+  'culture',
+  'language',
+  'immigration',
+  'resilience',
+  'advice',
+  'success'
+]
 
-    console.log('tags', tags)
+// Check if the tags are valid
+const validateTags = (tags: string[]) => {
+  return tags.filter(t => validTags.includes(t))
+}
 
-    const chapters = filterChapters(tags)
+export const RelatedContents = memo(
+  function RelatedContents({ tags }: { tags: string[] }) {
+    const validatedTags = validateTags(tags)
+
+    if (validatedTags.length === 0) {
+      return <DifferentQuestions />
+    }
+
+    const chapters = filterChapters(validatedTags)
 
     return (
       <Carousel
@@ -31,9 +51,12 @@ export const Contents = memo(
         }}
         className="w-full mx-auto sm:max-w-2xl"
       >
-        <CarouselContent>
+        <CarouselContent className="items-stretch">
           {chapters.map(chapter => (
-            <CarouselItem key={chapter.videoId} className="md:basis-1/2">
+            <CarouselItem
+              key={chapter.videoId}
+              className="md:basis-1/2 self-stretch"
+            >
               <ChapterCard chapter={chapter} />
             </CarouselItem>
           ))}
@@ -104,8 +127,8 @@ const ChapterCard = ({ chapter }: { chapter: Chapter }) => {
       .join('&')
 
     return (
-      <Card>
-        <CardContent className="flex-col">
+      <Card className="h-full">
+        <CardContent className="flex flex-col h-full">
           <div className="w-full">
             <LiteYouTubeEmbed
               id={chapter.videoId} // Default none, id of the video or playlist
@@ -117,24 +140,24 @@ const ChapterCard = ({ chapter }: { chapter: Chapter }) => {
             />
           </div>
           <hr />
-          <div className="pt-3 pb-4 px-6">
-            <div className="text-sm leading-tight line-clamp-3">
-              {chapter.summary}
-            </div>
-            <a
-              href={`https://www.youtube.com/watch?v=${chapter.videoId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs opacity-50"
-            >
-              Watch <b>{video.publisher}</b> on YouTube
-            </a>
-            <div className="flex flex-wrap gap-1 mt-2">
-              {chapter.tags.map(tag => (
-                <Badge key={tag} className="rounded-full" variant="outline">
-                  {tag}
-                </Badge>
-              ))}
+          <div className="pt-3 pb-4 px-6 grow flex flex-col justify-between select-none">
+            <div className="text-sm leading-tight">{chapter.summary}</div>
+            <div className="flex flex-col items-stretch gap-2">
+              <div className="flex flex-wrap gap-1 mt-2">
+                {chapter.tags.map(tag => (
+                  <Badge key={tag} className="rounded-full" variant="outline">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+              <a
+                className="text-xs opacity-50 hover:opacity-90 transition-opacity text-right"
+                href={`https://www.youtube.com/watch?v=${chapter.videoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <b>{video.publisher}</b> on YouTube
+              </a>
             </div>
           </div>
         </CardContent>

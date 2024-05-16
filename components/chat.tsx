@@ -12,7 +12,7 @@ import { useAIState, useUIState } from 'ai/rsc'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
-// import { Contents } from './tools/contents'
+import { RelatedContents } from './tools/related-contents'
 
 export interface ChatProps extends React.ComponentProps<'div'> {
   initialMessages?: Message[]
@@ -68,7 +68,7 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
           <ChatList messages={messages} isShared={false} session={session} />
         ) : (
           <EmptyScreen />
-          // <Contents tags={['culture', 'growth']} />
+          // <RelatedContents tags={['networking']} />
         )}
         <div className="h-px w-full" ref={visibilityRef} />
       </div>
